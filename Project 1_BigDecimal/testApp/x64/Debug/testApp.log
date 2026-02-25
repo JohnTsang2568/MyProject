@@ -1,0 +1,3 @@
+﻿  testApp.cpp
+C:\Users\JohnTsang\Desktop\C++大作业【上学期】\曾炜铭_202535450164_实验报告及源代码文件\曾炜铭_202535450164_计类4班(或金科班或旅游班)_源代码\高精度加减（包括小数）\testApp\testApp.cpp(221,13): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  testApp.vcxproj -> C:\Users\JohnTsang\Desktop\C++大作业【上学期】\曾炜铭_202535450164_实验报告及源代码文件\曾炜铭_202535450164_计类4班(或金科班或旅游班)_源代码\高精度加减（包括小数）\x64\Debug\testApp.exe
