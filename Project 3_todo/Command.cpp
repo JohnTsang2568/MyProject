@@ -5,7 +5,7 @@
 #include <algorithm>
 #include <unordered_map>
 
-enum class CmdType { Add, Delete, List, SortImp, SortDate, Exit, Invalid, ManageTODO, Edit};
+enum class CmdType { Add, Delete, List, SortImp, SortDate, Exit, Invalid, ManageTODO, Edit, Export, Help};
 //list all types of commands
 
 static const std::unordered_map<std::string, CmdType> cmdMap = {
@@ -16,7 +16,9 @@ static const std::unordered_map<std::string, CmdType> cmdMap = {
     {"sortdate", CmdType::SortDate},
     {"exit", CmdType::Exit},
     {"TODO setting", CmdType::ManageTODO},
-    { "edit", CmdType::Edit }
+    { "edit", CmdType::Edit },
+    {"export", CmdType::Export},
+    {"help",CmdType::Help }
 };
 //using map to construct string-cmd relation
 
@@ -44,6 +46,8 @@ bool Command::execute(const std::string& input) {
             task.name = name;
             todoList.add_TODO_to_list(task);
             std::cout << R"(")" << name << R"(")" << " has been successfully added to the list" << std::endl;
+            todoList.display_list();
+            //display list after amending it
         }
         else {
             std::cout << "Invalid input format. Use \"add <TODO name>\"" << std::endl;
@@ -55,6 +59,10 @@ bool Command::execute(const std::string& input) {
         if (iss >> name) {
             todoList.delete_by_name(name);
             std::cout << R"(")" <<name << R"(")" << " has been successfully deleted from the list" << std::endl;
+            todoList.display_list();
+
+            //display list after amending it
+
         }
         else {
             std::cout << "Invalid input format. Use \"delete <TODO name>\"" << std::endl;
@@ -67,10 +75,16 @@ bool Command::execute(const std::string& input) {
     case CmdType::SortImp:
         todoList.sort_list_by_importance();
         std::cout << "The list has been sorted based on importance" << std::endl;
+
+        todoList.display_list();
+        //display list after amending it
         break;
     case CmdType::SortDate:
         todoList.sort_list_by_date();
         std::cout << "The list has been sorted based on date" << std::endl;
+
+        todoList.display_list();
+        //display list after amending it
         break;
     case CmdType::Edit: {
         std::cout << "Please input index of the task to be edited: ";
@@ -92,6 +106,13 @@ bool Command::execute(const std::string& input) {
             std::cout << "Invalid input\n";
         }
         break;
+    }
+    case CmdType::Export: {
+        todoList.ExportCurrentList();
+        break;
+    }
+    case CmdType::Help: {
+        TODOlist::Help();
     }
     case CmdType::Exit:
         return false; 

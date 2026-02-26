@@ -9,7 +9,7 @@
 class TODO
 {
 public:
-	TODO() : importance(0), date(""), index(0)
+	TODO() : name(""),importance(0), date(""), index(0)
 	{
 	}
 	void setTODO(const std::string& name);

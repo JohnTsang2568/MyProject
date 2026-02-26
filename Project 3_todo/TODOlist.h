@@ -7,9 +7,12 @@
 class TODOlist
 {
 private:
-	std::vector<TODO> items;
+	
 
 public:
+	std::vector<TODO> items;
+	TODOlist(std::vector<TODO> now) :items(now) {};
+	TODOlist(){};
 	void add_TODO_to_list(const TODO& item);
 	void delete_by_name(const std::string& name);
 	void display_list() const;
@@ -23,6 +26,10 @@ public:
 	//sort the list
 
 	TODO& get_item(size_t index);
+	std::vector<TODO> ImportExistedList();
+	void ExportCurrentList();
+
+	static void Help();
 };
 
 
