@@ -58,7 +58,7 @@ bool TODOmanager::execute_cmd(std::string& input) {
             std::cout << "Date has been set to " << dateStr << "\n";
         }
         else {
-            std::cout << "用法: date <日期>\n";
+            std::cout << "Usage: date <yy-mm-dd>\n";
         }
         break;
     }
