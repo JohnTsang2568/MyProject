@@ -5,7 +5,6 @@
 #include <iomanip>
 #include<fstream>
 #include<sstream>
-#include <stdexcept>
 
 std::string EXPORT_PATH = R"(C:\Users\JohnTsang\Desktop\filename.csv)";
 
@@ -144,21 +143,51 @@ void TODOlist::ExportCurrentList()
 
 void TODOlist::Help()
 {
-	std::cout << "Welcome to the TODOlist Manager" << std::endl;
-	std::cout << "Please Enter Command as Follows to Proceed" << std::endl;
+	
 	for (size_t i = 0; i < 50; i++)std::cout << "-";
 	std::cout << std::endl;
 	std::cout << "\"add <TODOname>\" to add a new TODO to your TODOlist" << std::endl;
 	std::cout << "\"delete <TODOname>\" to  delete a TODO from your TODOlist:" << std::endl;
-	std::cout << "\"list\" to show current TODOlist" << std::endl;
+	std::cout << R"("search <keyword>" to search for TODO on the list)" << std::endl;
+	std::cout << "\"show\" to show current TODOlist" << std::endl;
 	std::cout << "\"edit\" to edit the status of TODO" << std::endl;
 	std::cout << "\"sortimp\" to sort current TODOlist by importance" << std::endl;
 	std::cout << "\"sortdate\" to sort current TODOlist by date" << std::endl;
 	std::cout << "\"exit\" to exit this application" << std::endl;
 	std::cout << R"("export" to export your current list)" << std::endl;;
 	std::cout << R"("help" to see instructions)" << std::endl;
+	
 	for (size_t i = 0; i < 50; i++)std::cout << "-";
 	std::cout << std::endl;
 
 	std::cout << std::endl;
+}
+
+void TODOlist::search(const std::string& keyword)
+{
+	std::vector <std::string>matches; std::vector <std::size_t>matches_id;
+	
+	for (size_t idx = 0; idx<this->items.size();++idx)
+	{
+		auto v = this->items.at(idx);
+		size_t match_pos = v.name.find(keyword);
+		if (match_pos == std::string::npos)continue;
+		else
+		{
+			matches.push_back(v.name);
+			matches_id.push_back(idx+1);
+		}
+		
+	}
+	if (matches.empty())std::cout << "No results found.";
+	else {
+		std::cout << "You may be searching for:\n";
+	    std::cout << "Index" << std::setw(20) << " " << "TODO" << std::setw(25) << std::endl;
+	}
+	for (int i = 0; i < matches.size(); i++)
+	{
+		std::cout << matches_id.at(i) << std::setw(15) << matches.at(i) << std::setw(25) << std::endl;
+	}
+	std::cout << std::endl;
+	std::cout << std::setw(0);
 }

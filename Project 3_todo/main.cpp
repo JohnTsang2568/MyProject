@@ -9,6 +9,8 @@ namespace
     void Intro(bool ini) //intro
     {
         if (ini) {
+            std::cout << "Welcome to the TODOlist Manager" << std::endl;
+            std::cout << "Please Enter Command as Follows to Proceed" << std::endl;
             TODOlist::Help();
             ini = false;
         }
@@ -21,10 +23,11 @@ int main() {
     Command cmd(myList);
     std::string line;
     bool ini = true;
+    Intro(ini);
+    ini = false;
+    std::cout << "> ";
+
     while (true) {
-        Intro(ini);
-        ini = false;
-        std::cout << "> ";
         if (!std::getline(std::cin, line)) break;
         if (!cmd.execute(line)) break;
     }

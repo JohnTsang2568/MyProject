@@ -5,20 +5,21 @@
 #include <algorithm>
 #include <unordered_map>
 
-enum class CmdType { Add, Delete, List, SortImp, SortDate, Exit, Invalid, ManageTODO, Edit, Export, Help};
+enum class CmdType { Add, Delete, List, SortImp, SortDate, Exit, Invalid, ManageTODO, Edit, Export, Help, Search};
 //list all types of commands
 
 static const std::unordered_map<std::string, CmdType> cmdMap = {
     {"add", CmdType::Add},
     {"delete", CmdType::Delete},
-    {"list", CmdType::List},
+    {"show", CmdType::List},
     {"sortimp", CmdType::SortImp},
     {"sortdate", CmdType::SortDate},
     {"exit", CmdType::Exit},
     {"TODO setting", CmdType::ManageTODO},
     { "edit", CmdType::Edit },
     {"export", CmdType::Export},
-    {"help",CmdType::Help }
+    {"help",CmdType::Help },
+     {"search",CmdType::Search}
 };
 //using map to construct string-cmd relation
 
@@ -81,7 +82,7 @@ bool Command::execute(const std::string& input) {
         break;
     case CmdType::SortDate:
         todoList.sort_list_by_date();
-        std::cout << "The list has been sorted based on date" << std::endl;
+        std::cout << "The list has been sorted based on deadline" << std::endl;
 
         todoList.display_list();
         //display list after amending it
@@ -113,12 +114,22 @@ bool Command::execute(const std::string& input) {
     }
     case CmdType::Help: {
         TODOlist::Help();
+        break;
+    }
+    case CmdType::Search: {
+        std::string keyword;
+        if (iss >> keyword)
+        {
+            todoList.search(keyword);
+        }
+        else std::cout << R"(Invalid input. Usage: "Search <keyword>" )" << std::endl;
+        break;
     }
     case CmdType::Exit:
         return false; 
     
     default:
-        std::cout << "Invalid command type, please refer to the instruction using \"help\"" << std::endl;
+        std::cout << "Invalid command type. Please refer to the instructions using \"help\"" << std::endl;
         break;
     }
     return true;

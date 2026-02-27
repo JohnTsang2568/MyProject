@@ -8,24 +8,26 @@
 namespace {
     enum class EditCmd {
         SetImportance,
-        SetDate,
+        SetDDL,
         AddDependency,
         Show,
         Help,
         Back,
+        SetCompleted,
         Invalid
     };
 
     const std::unordered_map<std::string, EditCmd> cmdMap = {
         {"importance", EditCmd::SetImportance},
         {"imp", EditCmd::SetImportance},
-        {"date", EditCmd::SetDate},
+        {"ddl", EditCmd::SetDDL},
         {"dependency", EditCmd::AddDependency},
         {"dep", EditCmd::AddDependency},
         {"show", EditCmd::Show},
         {"help", EditCmd::Help},
         {"back", EditCmd::Back},
         {"exit", EditCmd::Back}, 
+        {"complete", EditCmd::SetCompleted}
     };   
 }
 
@@ -44,14 +46,14 @@ bool TODOmanager::execute_cmd(std::string& input) {
         int val;
         if (iss >> val) {
             TODO_now.setImportance(static_cast<size_t>(val));
-            std::cout << "Importance has been set to " << val << "\n";
+            std::cout << "Importance has been set to " << val%6 << "\n";
         }
         else {
             std::cout << "Usage: importance <Value>\n";
         }
         break;
     }
-    case EditCmd::SetDate: {
+    case EditCmd::SetDDL: {
         std::string dateStr;
         if (iss >> dateStr) {
             TODO_now.setDate(dateStr);
@@ -65,7 +67,10 @@ bool TODOmanager::execute_cmd(std::string& input) {
     case EditCmd::AddDependency: {
         std::string depName;
         if (iss >> depName) {
-            std::cout << "Dependency added" << depName;
+            static TODO now_dependency;
+            now_dependency.setTODO(depName);
+            TODO_now.set_TODO_dependency(depName);
+            std::cout << "Dependency added."  << "\n";
         }
         else {
             std::cout << "Usage: dep <TODO name>\n";
@@ -76,8 +81,15 @@ bool TODOmanager::execute_cmd(std::string& input) {
         std::cout << "Current TODO£º\n"
             << "  Name: " << TODO_now.name << "\n"
             << "  Importance: " << TODO_now.importance << "\n"
-            << "  Date: " << TODO_now.date << "\n"
-            << "  Internal index: " << TODO_now.index << "\n";
+            << "  Deadline: " << TODO_now.date << "\n"
+            << "  Dependency:";
+        for (const auto& v : TODO_now.dependencies)
+        {
+            std::cout << v << " ";
+        }
+        std::cout << "\n";
+        std::cout << "  Internal index: " << TODO_now.index << "\n"
+            << "  Complete status: " << TODO_now.completed << "\n";
        
         break;
     }
@@ -86,6 +98,11 @@ bool TODOmanager::execute_cmd(std::string& input) {
         break;
     case EditCmd::Back:
         return false;   
+    case  EditCmd::SetCompleted:
+    {
+        TODO_now.set_completed();
+        break;
+    }
     case EditCmd::Invalid:
     default:
         std::cout << "Invalid command, use help to refer to command set\n";
@@ -108,13 +125,14 @@ void TODOmanager::run_TODOmanager() {
             break;  
         }
     }
-    std::cout << "Back to main menu\n";
+    std::cout << "Back to main menu.\n";
 }
 
 void TODOmanager::show_help() const {
     std::cout << "Command£º\n"
+        << "  complete - Mark current TODO as completed\n"
         << "  imp <Value>  - Set importance (0-5)\n"
-        << "  date <yy-mm-dd>      - Set Date (Example: 2025-03-15)\n"
+        << "  ddl <yy-mm-dd>      - Set Deadline (Example: 2025-03-15)\n"
         << "  dep <Task Name>     - Set Dependency for Current TODO\n"
         << "  show             - Check Status of Current TODO\n"
         << "  help             - Display Help Information\n"

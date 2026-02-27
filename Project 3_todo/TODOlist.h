@@ -30,6 +30,9 @@ public:
 	void ExportCurrentList();
 
 	static void Help();
+
+	void search(const std::string& keyword);
+	
 };
 
 

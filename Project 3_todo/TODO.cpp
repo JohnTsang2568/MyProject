@@ -21,8 +21,15 @@ void TODO::setIndex(size_t index)
 	this->index = index;
 }
 
-void TODO::set_TODO_dependency(TODO& item, const TODO& dependency)
+void TODO::set_TODO_dependency(const std::string & dependency)
 {
-	item.dependencies.push_back(dependency);
+	
+	this->dependencies.push_back(dependency);
+}
+
+void TODO::set_completed()
+{
+	this->completed = true;
+	this->name = this->name + "(Completed)";
 }
 
