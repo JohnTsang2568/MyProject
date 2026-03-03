@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>Image/Character/Marasame/BodyWidegt/Masame_a_0_1950.png</file>
+        <file>Image/Character/Marasame/BodyWidegt/Marasame_a_0_1956.png</file>
+        <file>Image/Character/Marasame/BodyWidegt/Marasame_a_0_1978.png</file>
+        <file>Image/Character/Marasame/EyeWidget/Smaller/Mareasame_a_0_1963.png</file>
+        <file>Image/Character/Marasame/EyeWidget/Smaller/Marasame_a_0_1968.png</file>
+    </qresource>
+    <qresource prefix="/new/bgimage">
+        <file>Image/Scenery/street_to_school_morningA.png</file>
+    </qresource>
+</RCC>
