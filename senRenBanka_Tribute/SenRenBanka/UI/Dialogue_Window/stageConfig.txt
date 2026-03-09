@@ -1,0 +1,230 @@
+%[
+	// 時間情報
+	"times" => %[
+		"朝" => %[
+			"prefix" => "m",
+			],
+		"昼" => %[
+			"prefix" => "a",
+			],
+		"夕方" => %[
+			"prefix" => "b",
+			"lightColor" => 0xc0ff6010,    // 背景補正光色
+			"lightType" => ltPsHardLight,  // 背景補正光合成種別
+			"brightness" => 0,             // 背景明度補正
+			"contrast" => 0,               // 背景コントラスト補正
+			"charLightColor" => 0xffeca48b,   // キャラ補正光合成色
+			"charLightType" => ltPsSoftLight, // キャラ補正光合成種別
+			"charBrightness" => -20,          // キャラ明度補正
+			"charContrast" => 8,              // キャラコントラスト補正
+			//"charHue" => 0,                   // キャラ色相補正 -180～180 (度)
+			//"charSaturation" => 0,            // キャラ彩度補正 -100～100 (%)
+			//"charLuminance" => 0,             // キャラ喜怒補正 -100～100 (%)
+			],
+		"夜" => %[
+			"prefix" => "c",
+			"lightColor" => 0xc0000040,   // キャラ補正光合成色
+			"lightType" => ltPsHardLight, // キャラ補正光合成種別
+			"brightness" => -20,          // キャラ明度補正
+			"contrast" => -30,            // キャラコントラスト補正
+			"charLightColor" => 0xff265283,   // キャラ補正光合成色
+			"charLightType" => ltPsSoftLight, // キャラ補正光合成種別
+			"charBrightness" => -32,          // キャラ明度補正
+			"charContrast" => -30,            // キャラコントラスト補正
+			],
+		"室内" => %[
+			"prefix" => "D",
+			]
+		],
+		"夜街灯" => %[
+			"prefix" => "c",
+			"lightColor" => 0xc0000040,   // キャラ補正光合成色
+            "lightType" => ltPsHardLight, // キャラ補正光合成種別
+			"brightness" => -10,          // キャラ明度補正
+            "contrast" => -10,            // キャラコントラスト補正
+            "charLightColor" => 0xff400080,   // キャラ補正光合成色
+            "charLightType" => ltPsSoftLight, // キャラ補正光合成種別
+            "charBrightness" => -15,          // キャラ明度補正
+            "charContrast" => -10,            // キャラコントラスト補正
+			],
+		"夜街灯２" => %[
+			"prefix" => "c",
+			"lightColor" => 0xc0000020,   // キャラ補正光合成色
+            "lightType" => ltPsHardLight, // キャラ補正光合成種別
+			"brightness" => -10,          // キャラ明度補正
+            "contrast" => -10,            // キャラコントラスト補正
+            "charLightColor" => 0xff200040,   // キャラ補正光合成色
+            "charLightType" => ltPsSoftLight, // キャラ補正光合成種別
+            "charBrightness" => -5,          // キャラ明度補正
+            "charContrast" => -15,            // キャラコントラスト補正
+			],
+		"夜部屋" => %[
+			"prefix" => "c",
+			"lightColor" => 0xc0000040,   // キャラ補正光合成色
+            "lightType" => ltPsHardLight, // キャラ補正光合成種別
+			"brightness" => -20,          // キャラ明度補正
+			"contrast" => -30,            // キャラコントラスト補正
+			],
+		"夜（消灯）" => %[
+            "prefix" => "d",
+            "lightColor" => 0xc0000040,   // キャラ補正光合成色
+            "lightType" => ltPsHardLight, // キャラ補正光合成種別
+            "brightness" => -20,          // キャラ明度補正
+            "contrast" => -30,            // キャラコントラスト補正
+            "charLightColor" => 0xff400080,   // キャラ補正光合成色
+            "charLightType" => ltPsSoftLight, // キャラ補正光合成種別
+            "charBrightness" => -50,          // キャラ明度補正
+            "charContrast" => -30,            // キャラコントラスト補正
+            ],
+
+	// 場所情報
+	"stages" => %[
+		"暗転" => %[
+			"image" => "画面_黒",
+			],
+		"白画面" => %[
+			"image" => "画面_白",
+			],
+
+		"青空" => %[
+			"image" => "空_青空",
+			],
+		"夕空" => %[
+			"image" => "空_夕空",
+			],
+		"夜空" => %[
+			"image" => "空_夜空",
+			],
+
+		"茉子の部屋" => %[
+			"image" => "ヒロイン_茉子の部屋TIME",
+			],
+		"芦花の部屋" => %[
+			"image" => "ヒロイン_芦花の部屋TIME",
+			],
+
+		"芳乃の部屋" => %[
+			"image" => "朝武_芳乃の部屋TIME",
+			],
+		"リビング" => %[
+			"image" => "朝武_リビングTIME",
+			],
+		"風呂場" => %[
+			"image" => "朝武_風呂場TIME",
+			],
+		"風呂場空" => %[
+			"image" => "朝武_風呂場（空）TIME",
+			],
+		"居候自室" => %[
+			"image" => "朝武_自室TIME",
+			],
+
+		"境内" => %[
+			"image" => "神社_境内TIME",
+			],
+		"境内モブ" => %[
+			"image" => "神社_境内モブTIME",
+			],
+		"本殿" => %[
+			"image" => "神社_神社内（刀）TIME",
+			],
+		"神社の中" => %[
+			"image" => "神社_神社内TIME",
+			],
+		"本殿儀式" => %[
+			"image" => "神社_神社内（儀式）TIME",
+			],
+
+		"教室" => %[
+			"image" => "学院_教室TIME",
+			],
+		"教室授業" => %[
+			"image" => "学院_教室授業TIME",
+			],
+		"教室休憩" => %[
+			"image" => "学院_教室休憩TIME",
+			],
+		"廊下" => %[
+			"image" => "学院_廊下TIME",
+			],
+		"学院前" => %[
+			"image" => "学院_学院前TIME",
+			],
+
+		"旅館前" => %[
+			"image" => "旅館_旅館前TIME",
+			],
+		"客室" => %[
+			"image" => "旅館_客室TIME",
+			],
+		"旅館の廊下" => %[
+			"image" => "旅館_廊下TIME",
+			],
+		"レナの部屋" => %[
+			"image" => "旅館_レナの部屋TIME",
+			],
+
+		"雰囲気" => %[
+			"image" => "街_雰囲気TIME",
+			],
+		"雰囲気モブ" => %[
+			"image" => "街_雰囲気モブTIME",
+			],
+		"目抜き通り" => %[
+			"image" => "街_目抜き通りTIME",
+			],
+		"目抜き通りモブ" => %[
+			"image" => "街_目抜き通りモブTIME",
+			],
+		"小道" => %[
+			"image" => "街_小道TIME",
+			],
+		"通学路" => %[
+			"image" => "街_通学路TIME",
+			],
+		"土産" => %[
+			"image" => "街_お店TIME",
+			],
+		"土産モブ" => %[
+			"image" => "街_お店モブTIME",
+			],
+		"甘味処" => %[
+			"image" => "街_甘味処TIME",
+			],
+
+		"甘味処モブ" => %[
+			"image" => "街_甘味処モブTIME",
+			],
+
+		"診療所" => %[
+			"image" => "街_診療所TIME",
+			],
+		"診療所破壊" => %[
+			"image" => "街_診療所（壊）",
+			],
+
+		"山の中" => %[
+			"image" => "山_山の中１TIME",
+			],
+		"山の中２" => %[
+			"image" => "山_山の中２TIME",
+			],
+		"山道" => %[
+			"image" => "山_山道TIME",
+			],
+		"川沿い" => %[
+			"image" => "山_川沿いTIME",
+			],
+
+		"武家屋敷" => %[
+			"image" => "特殊_武家屋敷TIME",
+			],
+
+		// 立ち絵観賞用
+		"立ち絵鑑賞背景" => %[ "image" => "extra_bg" ],
+		"立ち絵鑑賞ユーザー背景" => %[ "image" => "extra_userbg" ],
+
+		],
+		"defaultTime" => "昼",
+]
+

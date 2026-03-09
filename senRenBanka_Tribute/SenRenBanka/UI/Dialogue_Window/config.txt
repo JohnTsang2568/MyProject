@@ -1,0 +1,10 @@
+.TitleBGM = "bgm61";
+
+	// 色選択のデフォルト色はこちらで変更してください
+	.DefaultColors = %[
+	win:  0xb75e74,	// ウィンドウ色
+	owin: 0x6da79f,	// ウィンドウ色（他者視点）
+	text: 0xFFFFFF,	// （未読）文字色
+	read: 0xEFDFFF,	// 既読文字色
+		];
+	.windowBaseStorage = "psb://window.pimg/";
