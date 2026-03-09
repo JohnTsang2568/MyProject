@@ -1,6 +1,6 @@
 ﻿#ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
+#include <QTimer>
 #include <QMainWindow>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
@@ -11,6 +11,11 @@
 #include <QPushButton>
 #include <QGraphicsView>
 #include<QBrush>
+#include<QFile>
+#include<QString>
+#include<QTextStream>
+#include <QFont>
+#include <QKeyEvent>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -28,19 +33,27 @@ public:
 private:
 
     Ui::MainWindow *ui;
-    QVBoxLayout *mainLayout;
-    QHBoxLayout *textLayout;
     QGraphicsItem* EyeWidget;
     QGraphicsItem *BodyWidget;
     QLabel *textLabel;
     QLabel * bgLabel;
     QGraphicsScene* scene;
-    QGraphicsView *view;
     QPushButton *expression_1;
     QPushButton *expression_2;
+    QTimer * timer;
+    QStringList allText;
+    QString line;
+    int line_idx;
+    int char_idx;
 
+private slots:
+    void appendNextChar();
 
 protected:
-    void resizeEvent(QResizeEvent *event) override;
+    void resizeEvent(QResizeEvent *event);
+    void mousePressEvent(QMouseEvent * event);
+    void loadText();
+    void startCurrentLine();
+    void keyPressEvent(QKeyEvent * event);
 };
 #endif // MAINWINDOW_H

@@ -9,4 +9,11 @@
     <qresource prefix="/new/bgimage">
         <file>Image/Scenery/street_to_school_morningA.png</file>
     </qresource>
+    <qresource prefix="/new/widget">
+        <file>SenRenBanka/UI/Dialogue_Window/dialogueBar.png</file>
+        <file>SenRenBanka/UI/Dialogue_Window/dialogueBar_pink.png</file>
+    </qresource>
+    <qresource prefix="/new/text">
+        <file>SenRenBanka/dialogue_only.txt</file>
+    </qresource>
 </RCC>
