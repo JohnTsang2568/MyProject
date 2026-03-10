@@ -16,6 +16,9 @@
 #include<QTextStream>
 #include <QFont>
 #include <QKeyEvent>
+#include<QEvent>
+#include <QMediaPlayer>
+#include <QAudioOutput>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -45,6 +48,9 @@ private:
     QString line;
     int line_idx;
     int char_idx;
+    QMediaPlayer* player;
+    QAudioOutput* output;
+
 
 private slots:
     void appendNextChar();
@@ -55,5 +61,7 @@ protected:
     void loadText();
     void startCurrentLine();
     void keyPressEvent(QKeyEvent * event);
+    void showEvent (QShowEvent * event);
+    void handleUI ();
 };
 #endif // MAINWINDOW_H

@@ -16,4 +16,7 @@
     <qresource prefix="/new/text">
         <file>SenRenBanka/dialogue_only.txt</file>
     </qresource>
+    <qresource prefix="/new/music">
+        <file>SenRenBanka/Audio/BGM/BGM61.wav</file>
+    </qresource>
 </RCC>
