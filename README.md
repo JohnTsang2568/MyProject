@@ -1,5 +1,4 @@
-PROJECT PORTFOLIO – ZENG Wai Ming
-Application No. 52600001924
+PROJECT PORTFOLIO
 
 This repository contains three independent projects that demonstrate my proficiency in C++ programming, data structures, modern C++ features, and GUI development. They are part of my ongoing efforts to strengthen my software development skills beyond coursework.
 
@@ -63,6 +62,44 @@ Key learning outcomes:
 
 ---
 
-Each project is accompanied by source code and a detailed README inside its respective subdirectory. For further information or to request a live demo, please contact me at waiming2007@outlook.com.
+PROJECT 4: Visual Novel (A Tribute to Senren Banka)
+------------------------------------------
+A visual novel application. Core features currently implemented include:
+
+- Character-by-Character Text Display: Supports loading local text files and rendering them on screen one character at a time.
+
+- Automated UI Management: Handles user interface logic automatically.
+
+- Customizable Visuals: Allows for flexible customization of backgrounds and character widgets.
+
+Planned Enhancements: 
+
+- Future iterations will focus on improving the reading experience with features such as:
+
+- Progress persistence (saving/loading reading position)
+
+- Skim and auto-read modes
+
+- Text history viewer
+
+- Jump to specific text segments
+
+This project expectedly demonstrates my ability to work with a professional GUI framework and design user‑friendly interfaces.
+
+Key learning outcomes:
+- Event‑driven programming and signal‑slot mechanism.
+- Model‑View architecture in Qt.
+- Integration of C++ logic with graphical components.
+
+---
+
+PROJECT 5: Slay the Stone (A Rogue-like card game)
+------------------------------------------
+A unique blend of Hearthstone, Slay the Spire, Yu-GI-OH and Shadowverse!
+
+
+---
+
+Each project is accompanied by source code and a detailed README inside its respective subdirectory.
 
 Thank you for reviewing my work.
