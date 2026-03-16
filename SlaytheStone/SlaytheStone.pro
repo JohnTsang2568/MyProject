@@ -13,17 +13,23 @@ SOURCES += \
     card.cpp \
     enemy.cpp \
     entity.cpp \
+    ieffect.cpp \
+    jsonparser.cpp \
     main.cpp \
     mainwindow.cpp \
-    player.cpp
+    player.cpp \
+    resource.cpp
 
 HEADERS += \
     battlefield.h \
     card.h \
     enemy.h \
     entity.h \
+    ieffect.h \
+    jsonparser.h \
     mainwindow.h \
-    player.h
+    player.h \
+    resource.h
 
 FORMS += \
     mainwindow.ui

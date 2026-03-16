@@ -1,0 +1,11 @@
+release/battlefield.o
+release/card.o
+release/enemy.o
+release/entity.o
+release/ieffect.o
+release/jsonparser.o
+release/main.o
+release/mainwindow.o
+release/player.o
+release/resource.o
+release/moc_mainwindow.o

@@ -4,10 +4,7 @@
 
 Player::Player() {}
 
-void Player::drawCard()
-{
 
-};
 
 void Player::playCard()
 {};

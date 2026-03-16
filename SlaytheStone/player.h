@@ -11,7 +11,13 @@ class Player : public Entity
 public:
     Player();
     using Hand =std::vector<std::unique_ptr<Card>>;
-    void drawCard();
+
+    void drawCard(int amonut)
+    {
+        std::unique_ptr<Card> card;
+        hand.push_back(std::move(card));
+    }
+
     void playCard();
     void discardCard();
     void vanishCard();

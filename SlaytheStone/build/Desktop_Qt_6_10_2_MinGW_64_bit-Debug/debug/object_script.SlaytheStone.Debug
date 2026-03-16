@@ -1,0 +1,11 @@
+debug/battlefield.o
+debug/card.o
+debug/enemy.o
+debug/entity.o
+debug/ieffect.o
+debug/jsonparser.o
+debug/main.o
+debug/mainwindow.o
+debug/player.o
+debug/resource.o
+debug/moc_mainwindow.o

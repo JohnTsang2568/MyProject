@@ -2,12 +2,30 @@
 #define CARD_H
 
 #include <QString>
+#include<jsonparser.h>
+#include<ieffect.h>
+
 class Player;
 class Enemy;
 
 class Card
 {
 public:
+
+    Card(const CardData& data,const EffectFactory & factory)
+    {
+        id=data.id;
+        name=data.name;
+        cost=data.cost;
+        for(const auto & now:data.effects)
+        {
+            auto effect=factory.MakeCard(now);
+            if(effect){
+            effects.push_back(std::move(effect));
+            }
+        }
+    }
+
     enum class CostType{mana,life};
     enum class Status{normal,unplayable};
     enum class Type{act,power,attack,no_type};
@@ -30,7 +48,14 @@ public:
     void play(Player* player,Enemy* enemy);
     //constructor that may help
 
-
+    void play(Player* source, const std::vector<Entity*>& targets) const {
+        EffectContext ctx;
+        ctx.player = source;
+        ctx.targets = targets;
+        for (const auto& effect : effects) {
+            effect->Execute(ctx);
+        }
+    }
 
 private:
     CostType cost_type = CostType::mana;
@@ -39,7 +64,9 @@ private:
     PlayerClass playerClass=PlayerClass::neutral;
     Place place=Place::deck;
     int cost=0;
-    std::string name="";
+    QString name="";
+    QString id="";
+    std::vector<std::unique_ptr<IEffect>> effects;
 };
 
 #endif // CARD_H
