@@ -4,6 +4,7 @@
 #include <QString>
 #include<jsonparser.h>
 #include<ieffect.h>
+#include<QDebug>
 
 class Player;
 class Enemy;
@@ -24,6 +25,7 @@ public:
             effects.push_back(std::move(effect));
             }
         }
+        qDebug() << this->name << "has been created!";
     }
 
     enum class CostType{mana,life};
@@ -45,17 +47,10 @@ public:
     void setStatus(Status s)    {this->status=s;};
     void setType(Type t)   {this->type=t;};
     void setClass(PlayerClass c)    {this->playerClass=c;};
-    void play(Player* player,Enemy* enemy);
+
     //constructor that may help
 
-    void play(Player* source, const std::vector<Entity*>& targets) const {
-        EffectContext ctx;
-        ctx.player = source;
-        ctx.targets = targets;
-        for (const auto& effect : effects) {
-            effect->Execute(ctx);
-        }
-    }
+    void play(BattleField * field);
 
 private:
     CostType cost_type = CostType::mana;
@@ -63,9 +58,9 @@ private:
     Type type=Type::no_type;
     PlayerClass playerClass=PlayerClass::neutral;
     Place place=Place::deck;
-    int cost=0;
-    QString name="";
-    QString id="";
+    int cost;
+    QString name;
+    QString id;
     std::vector<std::unique_ptr<IEffect>> effects;
 };
 

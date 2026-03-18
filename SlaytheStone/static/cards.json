@@ -1,0 +1,19 @@
+[
+  {
+    "id": "1",
+    "name": "Fireball",
+    "cost": 2,
+    "effects": [
+      { "type": "Change_life", "amount": 2, "target": "enemy_single" },
+      { "type": "Draw", "amount": 1, "target": "player" }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Stoneskin",
+    "cost": 1,
+    "effects": [
+      { "type": "ExtraResource", "resource": "block", "amount": 3, "target": "player" }
+    ]
+  }
+]

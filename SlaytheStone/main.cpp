@@ -3,6 +3,8 @@
 #include<ieffect.h>
 #include<card.h>
 #include <QApplication>
+#include <battlefield.h>
+#include<player.h>
 
 int main(int argc, char *argv[])
 {
@@ -10,7 +12,7 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.show();
 
-    QList<CardData> cardsData = JsonParser::parseCardsFromJson(":/cards.json");
+    QList<CardData> cardsData = JsonParser::parseCardsFromJson("://static/cards.json");
 
     EffectFactory factory;
 
@@ -18,7 +20,10 @@ int main(int argc, char *argv[])
     for (const auto& cardData : std::as_const(cardsData)) {
         cards.append(new Card(cardData, factory));
     }
+    Player player;
+    BattleField field(&player);
 
+    EffectContext ctx(&field,&player);
 
     return a.exec();
 }

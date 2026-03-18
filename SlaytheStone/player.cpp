@@ -2,17 +2,12 @@
 #include <battlefield.h>
 #include <card.h>
 
-Player::Player() {}
 
+void Player::play(int idx)
+{
+    auto card=this->m_hand.discard(idx);
+    if(!card)return;
 
-
-void Player::playCard()
-{};
-
-void Player::vanishCard()
-{};
-void Player::suffleCard()
-{};
-
-void Player::sortHandbyCost()
-{};
+    card->play(this->m_field);
+    this->discardCard(idx);
+}

@@ -11,25 +11,33 @@ CONFIG += c++17
 SOURCES += \
     battlefield.cpp \
     card.cpp \
+    deck.cpp \
     enemy.cpp \
     entity.cpp \
+    graveyard.cpp \
+    hand.cpp \
     ieffect.cpp \
     jsonparser.cpp \
     main.cpp \
     mainwindow.cpp \
     player.cpp \
-    resource.cpp
+    resource.cpp \
+    vannishyard.cpp
 
 HEADERS += \
     battlefield.h \
     card.h \
+    deck.h \
     enemy.h \
     entity.h \
+    graveyard.h \
+    hand.h \
     ieffect.h \
     jsonparser.h \
     mainwindow.h \
     player.h \
-    resource.h
+    resource.h \
+    vannishyard.h
 
 FORMS += \
     mainwindow.ui
@@ -38,3 +46,9 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    resource.qrc
+
+DISTFILES += \
+    card.js
