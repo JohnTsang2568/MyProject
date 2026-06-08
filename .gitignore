@@ -1,0 +1,31 @@
+﻿# Excluded from repository
+CNN/
+CNN-build/
+
+# Qt / IDE
+.qtcreator/
+*.pro.user
+Makefile
+Makefile.*
+.qmake.stash
+moc_*.cpp
+qrc_*.cpp
+ui_*.h
+
+# Object files
+*.o
+*.obj
+*.pdb
+*.res
+
+# Compiled binaries
+*.exe
+
+# Python
+__pycache__/
+*.pyc
+
+# VS Code / Visual Studio
+.vscode/
+.vs/
+*.code-workspace

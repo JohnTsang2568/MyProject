@@ -1,105 +1,125 @@
-PROJECT PORTFOLIO
+﻿# Project Portfolio
 
-This repository contains three independent projects that demonstrate my proficiency in C++ programming, data structures, modern C++ features, and GUI development. They are part of my ongoing efforts to strengthen my software development skills beyond coursework.
-
----
-
-PROJECT 1: BigInt – Arbitrary-Precision Arithmetic Using Linked List
---------------------------------------------------------------------
-Description:
-Unlike conventional implementations that rely on arrays, strings, or vectors to simulate high‑precision arithmetic, this project implements a doubly linked circular list to store digits of arbitrarily large integers and decimals. Each node holds a single digit, and the list structure allows natural propagation of carries/borrows during addition and subtraction. The implementation includes:
-
-- Full support for addition and subtraction of integers and decimals.
-- Capacity to handle multiple input.
-- Manual memory management following the Rule of Three (destructor, copy constructor, copy assignment operator).
-- Sign handling and alignment of decimal points.
-
-Key learning outcomes:
-- Deep understanding of pointer manipulation and dynamic memory.
-- Experience with linked list traversal, insertion, and deletion.
-- Ability to design a non‑trivial class with proper resource management.
+This repository contains a collection of independent projects demonstrating proficiency in C++ programming, data structures, modern C++ features, GUI development, computer vision, and game design.
 
 ---
 
-PROJECT 2: Stanford CS106L Assignments (C++ Modern Features)
--------------------------------------------------------------
-This project comprises three assignments from the Stanford CS106L course, focusing on modern C++ and real‑world application design.
+## Project 1: BigDecimal — Arbitrary-Precision Arithmetic Using Linked List
 
-Assignment 2.1: Course Scheduler
-- Reads a list of courses from an input file, filters them based on user‑specified availability, and outputs the available and unavailable courses into separate files.
-- Practices: file I/O, container usage (std::vector, std::string).
+**Description:** Implements arithmetic operations for arbitrarily large integers and decimals using a doubly linked circular list. Each node holds a single digit, and the list structure allows natural propagation of carries and borrows during addition and subtraction.
 
-Assignment 2.2: Best Match
-- Implements a matching algorithm that finds the best match for a query among a set of entries based on field‑wise comparison.
-- Practices: STL algorithms (std::sort, std::find_if), custom comparators, and string manipulation.
+**Features:**
 
-Assignment 2.3: Custom Class Design
-- Designs a custom class (e.g., a Student or Course class) with proper encapsulation, constructors, and operator overloading.
-- Practices: object‑oriented design, inheritance (if applicable), and RAII principles.
+- Full support for addition and subtraction of integers and decimals
+- Sign handling and decimal point alignment
+- Manual memory management following the Rule of Three
+- Qt-based GUI calculator (optional frontend)
 
-Key learning outcomes:
-- Mastery of C++ standard library containers and algorithms.
-- Experience with file processing and text parsing.
-- Solid understanding of class design, rule of five, and modern C++ idioms (auto, range‑based for, etc.).
+**Key Learning Outcomes:**
+
+- Deep understanding of pointer manipulation and dynamic memory
+- Experience with linked list traversal, insertion, and deletion
+- Ability to design a non-trivial class with proper resource management
 
 ---
 
-PROJECT 3: ToDo List Application (Qt GUI)
-------------------------------------------
-A feature‑rich ToDo list application. Currently supports:
+## Project 2: Stanford CS106L Assignments
 
-- Add, delete, and view tasks.
-- Sort tasks by priority and date.
-- Edit task status: date, importance, dependence, for instance.
-- Planned enhancements: file persistence (save/load tasks), filtering by category, search functionality and  Qt-built GUI.
+**Description:** Assignments from Stanford CS106L, a course on modern Standard C++ programming.
 
-This ongoing project expectedly demonstrates my ability to work with a professional GUI framework and design user‑friendly interfaces.
+**Assignments:**
 
-Key learning outcomes:
-- Event‑driven programming and signal‑slot mechanism.
-- Model‑View architecture in Qt.
-- Integration of C++ logic with graphical components.
+- **Assignment 1: Course Scheduler** — Reads courses from a file, filters by user availability, and outputs results. Practices file I/O and STL containers (`std::vector`, `std::string`).
+- **Assignment 2: Best Match** — Matching algorithm using field-wise comparison. Practices STL algorithms (`std::sort`, `std::find_if`) and custom comparators.
+- **Assignment 3: Custom Class Design** — Designing classes with proper encapsulation, constructors, and operator overloading. Practices OOP design and RAII principles.
+- **Assignment 4: Spell Checker** — Implements a spell checker using a custom hash table and dictionary lookup. Practices templates, hash tables, and file processing.
 
----
+**Key Learning Outcomes:**
 
-PROJECT 4: Visual Novel (A Tribute to Senren Banka)
-------------------------------------------
-A visual novel application. Core features currently implemented include:
-
-- Character-by-Character Text Display: Supports loading local text files and rendering them on screen one character at a time.
-
-- Automated UI Management: Handles user interface logic automatically.
-
-- Customizable Visuals: Allows for flexible customization of backgrounds and character widgets.
-
-Planned Enhancements: 
-
-- Future iterations will focus on improving the reading experience with features such as:
-
-- Progress persistence (saving/loading reading position)
-
-- Skim and auto-read modes
-
-- Text history viewer
-
-- Jump to specific text segments
-
-This project expectedly demonstrates my ability to work with a professional GUI framework and design user‑friendly interfaces.
-
-Key learning outcomes:
-- Event‑driven programming and signal‑slot mechanism.
-- Model‑View architecture in Qt.
-- Integration of C++ logic with graphical components.
+- Mastery of C++ standard library containers and algorithms
+- Experience with file processing and text parsing
+- Solid understanding of class design, Rule of Five, and modern C++ idioms
 
 ---
 
-PROJECT 5: Slay the Stone (A Rogue-like card game)
-------------------------------------------
-A unique blend of Hearthstone, Slay the Spire, Yu-GI-OH and Shadowverse!
+## Project 3: ToDo List Application
 
+**Description:** A feature-rich console-based ToDo list application written in C++.
+
+**Features:**
+
+- Add, delete, and view tasks
+- Sort tasks by priority and date
+- Edit task attributes (date, importance, dependencies)
+- Import and export task lists
+- Search tasks by keyword
+- Built-in help system
+
+**Key Learning Outcomes:**
+
+- Modular class design (TODO, TODOlist, Command, TODOmanager)
+- File I/O for data persistence
+- Command parsing and interactive CLI design
 
 ---
 
-Each project is accompanied by source code and a detailed README inside its respective subdirectory.
+## Project 4: LKA — Lane Keeping Assistant
+
+**Description:** A traditional computer vision prototype for lane detection and lane keeping using Python and OpenCV.
+
+**Features:**
+
+- Lane detection via threshold binarization and Canny edge detection
+- Pixel offset calculation between lane center and image center
+- PID steering control to simulate lane keeping
+- Visualization with ROI overlay, lane centerline, and steering arrow
+- Video file processing for frame-by-frame lane following
+
+**Tech Stack:** Python, OpenCV, NumPy, Matplotlib
+
+---
+
+## Project 5: Senren Banka Tribute — Visual Novel
+
+**Description:** A visual novel application built with Qt, inspired by *Senren Banka*.
+
+**Features:**
+
+- Character-by-character text display with typewriter effect
+- Customizable backgrounds and character sprites
+- Background music and sound effects
+- Automated UI management and scene transitions
+- Keyboard interaction support
+
+**Key Learning Outcomes:**
+
+- Event-driven programming and Qt signal-slot mechanism
+- Graphics rendering with QGraphicsScene and QGraphicsView
+- Multimedia integration with QMediaPlayer
+
+---
+
+## Project 6: Slay the Stone — Rogue-like Card Game
+
+**Description:** A unique blend of Hearthstone, Slay the Spire, Yu-Gi-Oh, and Shadowverse, built with Qt and C++.
+
+**Features:**
+
+- JSON-driven card data system with an effect factory
+- Player and enemy entities with battlefield management
+- Card types: Act, Power, Attack
+- Player classes: Warrior, Warlock, Robot, Neutral
+- Deck, hand, graveyard, and vanishyard zones
+- Extensible effect system via `IEffect` interface
+
+**Key Learning Outcomes:**
+
+- Game architecture design with entity-component patterns
+- Factory pattern for card effects
+- JSON parsing and data-driven design
+
+---
+
+Each project contains its own source code and a detailed README inside its respective subdirectory.
 
 Thank you for reviewing my work.
