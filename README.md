@@ -23,22 +23,38 @@ This repository contains a collection of independent projects demonstrating prof
 
 ---
 
-## Project 2: Stanford CS106L Assignments
+## Project 2: Stanford CS106L Assignments (Full Set)
 
-**Description:** Assignments from Stanford CS106L, a course on modern Standard C++ programming.
+**Description:** Complete implementation of all seven assignments from Stanford CS106L, a course on modern Standard C++ programming.
 
-**Assignments:**
+**Assignment 1: Course Scheduler**
+Reads courses from a CSV file, filters by user availability, and outputs results. Practices file I/O and STL containers (`std::vector`, `std::string`).
 
-- **Assignment 1: Course Scheduler** — Reads courses from a file, filters by user availability, and outputs results. Practices file I/O and STL containers (`std::vector`, `std::string`).
-- **Assignment 2: Best Match** — Matching algorithm using field-wise comparison. Practices STL algorithms (`std::sort`, `std::find_if`) and custom comparators.
-- **Assignment 3: Custom Class Design** — Designing classes with proper encapsulation, constructors, and operator overloading. Practices OOP design and RAII principles.
-- **Assignment 4: Spell Checker** — Implements a spell checker using a custom hash table and dictionary lookup. Practices templates, hash tables, and file processing.
+**Assignment 2: Best Match**
+Matching algorithm using field-wise comparison. Practices STL algorithms (`std::sort`, `std::find_if`), custom comparators, and string manipulation.
+
+**Assignment 3: Custom Class Design**
+Designing classes with proper encapsulation, constructors, and operator overloading. Practices OOP design, inheritance, and RAII principles.
+
+**Assignment 4: Spell Checker**
+Implements a spell checker using a custom hash table and dictionary lookup. Practices templates, hash tables, `std::unordered_set`, and file processing.
+
+**Assignment 5: Treebook**
+Implements a `User` class for a fictional social media platform with full special member functions (SMFs), operator overloading (`operator<<`, `operator+=`, `operator<`), and friend functions. Practices copy/move semantics, raw pointer array management, and symmetric friend relationships.
+
+**Assignment 6: Explore Courses**
+Uses `std::optional` and monadic operations (`and_then`, `transform`, `or_else`) to build a course lookup system without conditional branching. Practices functional-style C++23 features and the `std::optional` API.
+
+**Assignment 7: Unique Pointer**
+Implements a custom `unique_ptr` from scratch with full RAII semantics, including constructors, destructor, dereference operators, move semantics, and deleted copy operations. Practices templates, operator overloading, move semantics, and smart pointer design. Also implements a singly-linked list backed by `unique_ptr`.
 
 **Key Learning Outcomes:**
 
 - Mastery of C++ standard library containers and algorithms
-- Experience with file processing and text parsing
-- Solid understanding of class design, Rule of Five, and modern C++ idioms
+- Deep understanding of RAII, smart pointers, and move semantics
+- Experience with operator overloading, special member functions, and friend functions
+- Functional-style programming with `std::optional` monadic operations
+- File processing, text parsing, and data-driven design
 
 ---
 
