@@ -1,0 +1,26 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.so
+
+# Virtual environment
+venv/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Images (keep test_images but ignore standalone images)
+*.png
+*.jpg
+*.jpeg
+!test_images/*.png
+
+# Video
+*.mp4
+*.avi
+*.mov
